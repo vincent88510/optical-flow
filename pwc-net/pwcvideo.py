@@ -93,4 +93,4 @@ for n in range(718):#int(count)-2):
 	print("frame" + str(n).zfill(6))
 
 # Create a video
-os.system("ffmpeg -r 24 -i " + output_frame_pth + "/frame%6d.png -vcodec libvpx -b 10M -y output/Result_WIN_20210525_15_40_40_Pro.mkv")
+os.system("ffmpeg -r 24 -i " + output_frame_pth + "/frame%6d.png -vcodec libvpx -b 10M -y output/pwc_result_video.mkv")
