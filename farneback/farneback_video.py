@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 
-capture = cv2.VideoCapture("../videos/video2.mp4")
+capture = cv2.VideoCapture("video.mp4")
 
 count = 0
 while 1:
@@ -12,7 +12,7 @@ while 1:
 		break
 	count += 1
 
-capture = cv2.VideoCapture("../videos/video2.mp4")
+capture = cv2.VideoCapture("video.mp4")
 
 if not os.path.exists('./Frames'):
     os.mkdir('./Frames')
@@ -53,6 +53,6 @@ for n in range(1, count):
 
     prvs = next
 
-os.system('ffmpeg -r 24 -i Frames/frame%6d.png -vcodec libvpx -b 10M -y FarnebackVideo2.mkv')
+os.system('ffmpeg -r 24 -i Frames/frame%6d.png -vcodec libvpx -b 10M -y FarnebackVideo.mkv')
 
 capture.release()
