@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-capture = cv2.VideoCapture("../videos/video1.mp4")
+capture = cv2.VideoCapture("video.mp4")
 
 # Reading the first frame
 _, frame1 = capture.read()
