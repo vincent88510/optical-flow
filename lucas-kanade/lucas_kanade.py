@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture('../videos/video2.mp4')
+cap = cv2.VideoCapture('video.mp4')
 
 # params for corner detection
 feature_params = dict(maxCorners = 100,
