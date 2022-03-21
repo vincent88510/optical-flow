@@ -44,7 +44,13 @@ Source : https://github.com/philferriere/tfoptflow
 
 <br/>
 
-First, download the model on http://bit.ly/tfoptflow and put it in
+First, install the tensorflow library
+
+    pip install tensorflow
+
+<br/>
+
+Download the model on http://bit.ly/tfoptflow and put it in
 
     models/pwcnet-lg-6-2-multisteps-chairsthingsmix/
 
@@ -73,45 +79,27 @@ Source : https://github.com/NVIDIA/flownet2-pytorch
 
 <br/>
 
+First, install the good version of PyTorch :
+
+    pip3 install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+
+<br/>
+
+    pip install pypng tensorboardx setproctitle colorama scipy matplotlib opencv-python
+
+Now, you will need to download the checkpoint for the inference, can be find at the link :
+
+<br/>
+
+    https://drive.google.com/u/0/uc?id=1hF8vS6YeHkx3j2pfCeQqqZGwA_PJq_Da&export=download
+
+To make the visualization to work, we need the open source software ffmpeg. You can find it on the Ubuntu app store or download it with RPM on terminal.
+
+<br/>
+
 Put an input video in the flownet2 folder and rename it "video.mp4".
-<br/>
-<br/>
 
+Finally run the following script to process a video and create two resulting videos named "FlowVideo.mkv" and "ArrowVideo.mkv" (you can convert it back to mp4 with ffmpeg, but VLC will do just fine with mkv):
 
-## raft
-Source : https://github.com/princeton-vl/RAFT
-
-<br/>
-
-Put an input video in the raft folder and rename it "video.mp4".
-
-
-
-
-
-
-
-
-## Installation 
-
-    # get flownet2-pytorch source
-    git clone https://github.com/NVIDIA/flownet2-pytorch.git
-    cd flownet2-pytorch
-
-    # install custom layers
-    bash install.sh
-    
-### Python requirements 
-Currently, the code supports python 3
-* numpy 
-* PyTorch ( == 0.4.1, for <= 0.4.0 see branch [python36-PyTorch0.4](https://github.com/NVIDIA/flownet2-pytorch/tree/python36-PyTorch0.4))
-* scipy 
-* scikit-image
-* tensorboardX
-* colorama, tqdm, setproctitle 
-
-## Inference
-    # Example on MPISintel Clean   
-    python main.py --inference --model FlowNet2 --save_flow --inference_dataset MpiSintelClean \
-    --inference_dataset_root /path/to/mpi-sintel/clean/dataset \
-    --resume /path/to/checkpoints
+    chmod +x start.sh
+    ./start.sh
